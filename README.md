@@ -21,14 +21,14 @@
 docker ps -a
 ```
 
-1. 「.env」にて [ IP_ADDRESS ] を使われていないIPアドレスに変更します。
+1. 「.env」にて、[ IP_ADDRESS ] を使われていないIPアドレスに変更します。
 ```
 【例】
 # IP Address for Docker Containers
 IP_ADDRESS=127.0.0.1
 ```
 
-1. 「.env」にて [ CONTAINER_NAME ] をわかりやすい名前に変更します。（半角英数字 + ハイフン）
+1. 「.env」にて、[ CONTAINER_NAME ] をわかりやすい名前に変更します。（半角英数字 + ハイフン）
 ```
 【例】
 # Docker Container Name
