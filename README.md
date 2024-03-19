@@ -21,29 +21,34 @@
 docker ps -a
 ```
 
-2. 「.env」にて [ IP_ADDRESS ] を使われていないIPアドレスに変更します。
+1. 「.env」にて [ IP_ADDRESS ] を使われていないIPアドレスに変更します。
 ```
 【例】
 # IP Address for Docker Containers
 IP_ADDRESS=127.0.0.1
 ```
 
-3. 「.env」にて [ CONTAINER_NAME ] をわかりやすい名前に変更します。（半角英数字 + ハイフン）
+1. 「.env」にて [ CONTAINER_NAME ] をわかりやすい名前に変更します。（半角英数字 + ハイフン）
 ```
 【例】
 # Docker Container Name
 CONTAINER_NAME=test-container
 ```
 
-4. MySQLのバージョンを指定したい場合は、「docker-compose.yml」にて、[ image: mysql:5.7 ]を変更します。
+1. 「.env」にて、MySQLのバージョンを指定します。（任意）
+  ※参考： https://hub.docker.com/_/wordpress/tags
 ```
 【例】
-# IP Address for Docker Containers
-IP_ADDRESS=127.0.0.1
+# MySQL Image Tag of Docker Container
+MYSQL_IMAGE_TAG=5.7
 ```
 
-5. WordPressのバージョンを指定したい場合は、「docker-compose.yml」にて、[ image: wordpress:latest ]を変更します。
-  参考： https://hub.docker.com/_/wordpress/tags
+1. 「.env」にて、WordPressのバージョンを指定します。（任意）
+```
+【例】
+# WordPress Image Tag of Docker Container
+WORDPRESS_IMAGE_TAG=latest
+```
 
 1. 下記コマンドで、Dockerを起動します。
   ```
