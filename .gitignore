@@ -1,12 +1,14 @@
+# VSCode
 .vscode/
+
+# Mac
 .DS_Store
-.node-versions
+
+# /wp-content/
+index.php
 languages
-node_modules
-plugins/*
-!plugins/aqualog
-plugins/aqualog/vendor
+plugins/index.php
+themes/index.php
 themes/twenty*
-upgrade
+plugins
 uploads
-package-lock.json
