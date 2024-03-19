@@ -5,10 +5,11 @@
 .DS_Store
 
 # /wp-content/
-index.php
 languages
-plugins/index.php
-themes/index.php
-themes/twenty*
 plugins
+themes
+plugins
+themes
+upgrade
 uploads
+index.php
