@@ -1,0 +1,12 @@
+.vscode/
+.DS_Store
+.node-versions
+languages
+node_modules
+plugins/*
+!plugins/aqualog
+plugins/aqualog/vendor
+themes/twenty*
+upgrade
+uploads
+package-lock.json
