@@ -4,12 +4,4 @@
 # Mac
 .DS_Store
 
-# wp-content
-languages
-plugins
-themes
-plugins
-themes
-upgrade
-uploads
-index.php
+wp-content
