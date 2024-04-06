@@ -4,7 +4,7 @@
 # Mac
 .DS_Store
 
-# /wp-content/
+# wp-content
 languages
 plugins
 themes
