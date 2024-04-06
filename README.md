@@ -1,14 +1,20 @@
-# Kosei Daimonの WordPress in Docker の開発環境
+<p align="center">
+    <h1 align="center">KD-WORDPRESS-DOCKER</h1>
+</p>
+<hr>
 
 ## 必須環境
 - Dockerが使える状態
+
+<hr>
 
 ## 機能
 - WordPress用のDockerコンテナ（WordPress + MySQL + phpMyAdmin）を作成できます。
 - ポート番号を分けることで、複数のサイトを同時に起動できます。
 - 各サイトに対応した好きなコンテナ名を設定できます。
 - 本ディレクトリに、`wp-content`と`upload.ini`が自動同期されます。
----
+
+<hr>
 
 ## 使い方
 ### １．プロジェクト名の指定
@@ -70,7 +76,7 @@
 
 3. 必要情報を入力して、「WordPressをインストール」をクリック
 
----
+<hr>
 
 ## phpMyAdminへアクセス
   `.env`の`PORT_PHPMYADMIN`を確認して、Webブラウザでアクセス
@@ -78,6 +84,8 @@
   【例】
   localhost:8001
   ```
+
+<hr>
 
 ## このDocker Compose関連のデータを全て削除
 ※データが全て削除されるので注意してください。
