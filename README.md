@@ -1,4 +1,4 @@
-# 大門光星の WordPress in Docker の開発環境
+# Kosei Daimonの WordPress in Docker の開発環境
 
 ## 必須環境
 - Dockerが使える状態
