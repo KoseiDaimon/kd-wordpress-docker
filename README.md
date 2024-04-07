@@ -88,8 +88,8 @@
 
 
 ## このDocker Compose関連のデータを全て削除
+下記コマンドで、`docker-compose up -d`で作成されたコンテナ、イメージ、ボリューム、ネットワークを停止して削除できます。
 ※データが全て削除されるので注意してください。
-- 下記コマンドで、`docker-compose up -d`で作成されたコンテナ、イメージ、ボリューム、ネットワークを停止して削除できます。
   ```
   docker-compose down --rmi all --volumes --remove-orphans
   ```
