@@ -91,5 +91,5 @@
 下記コマンドで、`docker-compose up -d`で作成されたコンテナ、イメージ、ボリューム、ネットワークを停止して削除できます。
 ※データが全て削除されるので注意してください。
   ```
-  docker-compose down --rmi all --volumes --remove-orphans
+  docker-compose down --volumes --remove-orphans
   ```
