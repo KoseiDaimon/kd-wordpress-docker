@@ -39,7 +39,7 @@
   【例】
   ```
   # Docker Container Name
-  CONTAINER_NAME=test-container
+  CONTAINER_NAME=your-container-name
   ```
 
 4. `.env`にて、各コンテナのバージョンを指定します。（任意）
