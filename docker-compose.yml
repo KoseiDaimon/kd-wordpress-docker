@@ -26,7 +26,7 @@ services:
     container_name: ${CONTAINER_NAME}_wordpress
     volumes:
       - ./wp-content:/var/www/html/wp-content
-      - ./conf.d/upload.ini:/usr/local/etc/php/conf.d/upload.ini
+      - ./conf.d:/usr/local/etc/php/conf.d/upload.ini
       - type: volume
         source: wordpress_data
         target: /var/www/html

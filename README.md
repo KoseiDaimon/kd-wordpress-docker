@@ -28,24 +28,24 @@
   ```
 
 2. `.env`にて、`PORT_WORDPRESS`と`PORT_PHPMYADMIN`を使われていないポート番号にします。
-  ```
   【例】
+  ```
   # Port Numbers of Docker Container
   PORT_WORDPRESS=8001
   PORT_PHPMYADMIN=8002
   ```
 
 3. `.env`にて、`CONTAINER_NAME`を使われていない、わかりやすい名前に変更します。（半角英数字 + ハイフン推奨）
-  ```
   【例】
+  ```
   # Docker Container Name
   CONTAINER_NAME=test-container
   ```
 
 4. `.env`にて、各コンテナのバージョンを指定します。（任意）
   ※参考： https://hub.docker.com
-  ```
   【例】
+  ```
   # Image Tag of Docker Container
   # https://hub.docker.com/
   IMAGE_TAG_MYSQL=5.7
@@ -67,8 +67,8 @@
 ### ３．WordPressをインストール
 1. WordPressにアクセス
   `.env`の`PORT_WORDPRESS`を確認して、Webブラウザでアクセス
-  ```
   【例】
+  ```
   localhost:8001
   ```
 
@@ -79,13 +79,19 @@
 
 
 ## phpMyAdminへアクセス
-  `.env`の`PORT_PHPMYADMIN`を確認して、Webブラウザでアクセス
-  ```
-  【例】
-  localhost:8001
-  ```
+`.env`の`PORT_PHPMYADMIN`を確認して、Webブラウザでアクセス
+【例】
+```
+localhost:8002
+```
 
-
+## アップロードファイルのサイズ上限を変更
+conf.dに`upload.ini`ファイルを作成し、下記の内容を記載する。
+【例】1GBまでアップロード可にする場合場合
+```
+upload_max_filesize = 1000M
+post_max_size = 1000M
+```
 
 ## このDocker Compose関連のデータを全て削除
 下記コマンドで、`docker-compose up -d`で作成されたコンテナ、イメージ、ボリューム、ネットワークを停止して削除できます。
