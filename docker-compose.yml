@@ -1,39 +1,31 @@
-version: '3.9'
+version: '3'
 services:
   db:
-    image: mysql:${IMAGE_TAG_MYSQL}
+    image: ${IMAGE_MYSQL}
     container_name: ${CONTAINER_NAME}_db
     volumes:
       - db_data:/var/lib/mysql
     environment:
-      MYSQL_ROOT_PASSWORD: wordpress
+      MYSQL_ROOT_PASSWORD: somewordpress
       MYSQL_DATABASE: wordpress
       MYSQL_USER: wordpress
       MYSQL_PASSWORD: wordpress
     networks:
       - network
-    healthcheck:
-      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
-      interval: 1s
-      timeout: 2s
-      retries: 10
 
   wordpress:
     depends_on:
-      db:
-        condition: service_healthy
-    image: wordpress:${IMAGE_TAG_WORDPRESS}
+      - db
+    image: ${IMAGE_WORDPRESS}
     container_name: ${CONTAINER_NAME}_wordpress
     volumes:
       - ./wp-content:/var/www/html/wp-content
-      - ./conf.d:/usr/local/etc/php/conf.d
-      - type: volume
-        source: wordpress_data
-        target: /var/www/html
+      - ./conf.d/upload.ini:/usr/local/etc/php/conf.d/upload.ini
+      - wordpress_data:/var/www/html
     ports:
       - "${PORT_WORDPRESS}:80"
     environment:
-      WORDPRESS_DB_HOST: db
+      WORDPRESS_DB_HOST: db:3306
       WORDPRESS_DB_USER: wordpress
       WORDPRESS_DB_PASSWORD: wordpress
       WORDPRESS_DEBUG: ${WORDPRESS_DEBUG}
@@ -43,7 +35,7 @@ services:
   phpmyadmin:
     depends_on:
       - db
-    image: phpmyadmin:${IMAGE_TAG_PHPMYADMIN}
+    image: ${IMAGE_PHPMYADMIN}
     container_name: ${CONTAINER_NAME}_phpmyadmin
     ports:
       - "${PORT_PHPMYADMIN}:80"
