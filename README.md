@@ -93,6 +93,16 @@ upload_max_filesize = 1000M
 post_max_size = 1000M
 ```
 
+## WSLのディレクトリで動かす場合
+権限の関係でDockerコンテナ内のファイルを編集できないことがあります。（permission denied）
+下記のように変更します。
+※これはwslのデフォルトユーザーをrootにする設定です。
+  Dockerコンテナ内だけでなく、常に全てのファイルを編集できてしまうことに注意が必要です。
+```conf:wsl.conf
+[user]
+default=root
+```
+
 ## このDocker Compose関連のデータを全て削除
 下記コマンドで、`docker-compose up -d`で作成されたコンテナ、イメージ、ボリューム、ネットワークを停止して削除できます。
 ※データが全て削除されるので注意してください。
