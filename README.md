@@ -27,7 +27,9 @@
   docker ps -a
   ```
 
-2. `.env`にて、`PORT_WORDPRESS`と`PORT_PHPMYADMIN`を使われていないポート番号にします。
+2. `.env.example`を`.env`に変更します。
+
+3. `.env`にて、`PORT_WORDPRESS`と`PORT_PHPMYADMIN`を使われていないポート番号にします。
   【例】
   ```
   # Port Numbers of Docker Container
@@ -35,14 +37,14 @@
   PORT_PHPMYADMIN=8002
   ```
 
-3. `.env`にて、`CONTAINER_NAME`を使われていない、わかりやすい名前に変更します。（半角英数字 + ハイフン推奨）
+4. `.env`にて、`CONTAINER_NAME`を使われていない、わかりやすい名前に変更します。（半角英数字 + ハイフン推奨）
   【例】
   ```
   # Docker Container Name
   CONTAINER_NAME=your-container-name
   ```
 
-4. `.env`にて、各コンテナのバージョンを指定します。（任意）
+5. `.env`にて、各コンテナのバージョンを指定します。（任意）
   ※参考： https://hub.docker.com
   【例】
   ```
@@ -53,13 +55,13 @@
   IMAGE_TAG_PHPMYADMIN=latest
   ```
 
-5. 下記コマンドで、Dockerを起動します。
+6. 下記コマンドで、Dockerを起動します。
   ```
   docker-compose up -d
   ```
   ※起動に失敗した場合は、再度実行したりしてください。
 
-6. 下記コマンドで、3つのコンテナが起動していることを確認します。
+7. 下記コマンドで、3つのコンテナが起動していることを確認します。
   ```
   docker ps -n 3
   ```
