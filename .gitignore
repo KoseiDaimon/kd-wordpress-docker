@@ -6,3 +6,6 @@
 
 # WordPress
 wp-content
+
+# 環境変数
+.env
