@@ -88,11 +88,16 @@ localhost:8002
 ```
 
 ## アップロードファイルのサイズ上限を変更
-`conf.d`ディレクトリに、`upload.ini`ファイルを作成し、下記の内容を記載する。
-【例】1GBまでアップロード可にする場合場合
+1. `conf.d`ディレクトリ内の、`upload.ini`ファイルに、下記の内容を記載する。
+【例】1GBまでアップロード可にする場合
 ```
 upload_max_filesize = 1000M
 post_max_size = 1000M
+```
+
+2. 下記コマンドを実行
+```sh
+docker-compose restart
 ```
 
 ## WSLのディレクトリで動かす場合
