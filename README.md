@@ -78,13 +78,22 @@
 
 3. 必要情報を入力して、「WordPressをインストール」をクリック
 
-
-
 ## phpMyAdminへアクセス
 `.env`の`PORT_PHPMYADMIN`を確認して、Webブラウザでアクセス
 【例】
 ```
 localhost:8002
+```
+
+## 作業の中断
+作業中断時にDockerコンテナを削除したい場合は、下記コマンドを実行します。
+```
+docker compose down
+```
+
+## 作業の再開
+```
+docker compose up -d
 ```
 
 ## アップロードファイルのサイズ上限を変更
@@ -100,6 +109,13 @@ post_max_size = 1000M
 docker-compose restart
 ```
 
+## このDocker Compose関連のデータを全て削除
+下記コマンドで、`docker-compose up -d`で作成されたコンテナ、イメージ、ボリューム、ネットワークを停止して削除できます。
+※データが全て削除されるので注意してください。
+  ```
+  docker-compose down --volumes --remove-orphans
+  ```
+
 ## WSLのディレクトリで動かす場合
 権限の関係でDockerコンテナ内のファイルを編集できないことがあります。（permission denied）
 下記のように変更します。
@@ -109,10 +125,3 @@ docker-compose restart
 [user]
 default=root
 ```
-
-## このDocker Compose関連のデータを全て削除
-下記コマンドで、`docker-compose up -d`で作成されたコンテナ、イメージ、ボリューム、ネットワークを停止して削除できます。
-※データが全て削除されるので注意してください。
-  ```
-  docker-compose down --volumes --remove-orphans
-  ```
