@@ -59,7 +59,7 @@
 例：/wordperss/ ディレクトリにいれる場合
   ```
   volumes:
-    - ./wordpress:/var/www/html/wordpress
+    - ./html:/var/www/html
     - ./conf.d/upload.ini:/usr/local/etc/php/conf.d/upload.ini
     - wordpress_data:/var/www/html
   working_dir: /var/www/html/wordpress
