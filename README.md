@@ -61,7 +61,6 @@
   volumes:
     - ./html:/var/www/html
     - ./conf.d/upload.ini:/usr/local/etc/php/conf.d/upload.ini
-    - wordpress_data:/var/www/html
   working_dir: /var/www/html/wordpress
   ```
 

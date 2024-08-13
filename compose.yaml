@@ -18,9 +18,8 @@ services:
     image: ${IMAGE_WORDPRESS}
     container_name: ${CONTAINER_NAME}_wordpress
     volumes:
-      - ./wp-content:/var/www/html/wp-content
+      - ./html:/var/www/html
       - ./conf.d/upload.ini:/usr/local/etc/php/conf.d/upload.ini
-      - wordpress_data:/var/www/html
     ports:
       - "${PORT_WORDPRESS}:80"
     environment:
@@ -47,8 +46,6 @@ services:
 volumes:
   db_data:
     name: ${CONTAINER_NAME}_db_data
-  wordpress_data:
-    name: ${CONTAINER_NAME}_wordpress_data
 
 networks:
   network:

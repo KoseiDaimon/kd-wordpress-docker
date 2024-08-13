@@ -5,7 +5,7 @@
 .DS_Store
 
 # WordPress
-wp-content
+html
 
 # 環境変数
 .env
