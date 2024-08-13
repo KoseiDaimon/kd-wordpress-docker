@@ -56,8 +56,13 @@
   ```
 
 6. サブディレクトリにWordPress関連ファイルを設置する場合は下記を設定する。
+例：/wordperss/ ディレクトリにいれる場合
   ```
-  working_dir: /var/www/html/wp
+  volumes:
+    - ./wordpress:/var/www/html/wordpress
+    - ./conf.d/upload.ini:/usr/local/etc/php/conf.d/upload.ini
+    - wordpress_data:/var/www/html
+  working_dir: /var/www/html/wordpress
   ```
 
 7. 下記コマンドで、Dockerを起動します。
