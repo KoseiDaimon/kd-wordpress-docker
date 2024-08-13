@@ -55,13 +55,18 @@
   IMAGE_TAG_PHPMYADMIN=latest
   ```
 
-6. 下記コマンドで、Dockerを起動します。
+6. サブディレクトリにWordPress関連ファイルを設置する場合は下記を設定する。
+  ```
+  working_dir: /var/www/html/wp
+  ```
+
+7. 下記コマンドで、Dockerを起動します。
   ```
   docker-compose up -d
   ```
   ※起動に失敗した場合は、再度実行したりしてください。
 
-7. 下記コマンドで、3つのコンテナが起動していることを確認します。
+8. 下記コマンドで、3つのコンテナが起動していることを確認します。
   ```
   docker ps -n 3
   ```
@@ -96,7 +101,7 @@ docker compose down
 docker compose up -d
 ```
 
-## アップロードファイルのサイズ上限を変更
+## WordPressのアップロードファイルのサイズ上限を変更
 1. `conf.d`ディレクトリ内の、`upload.ini`ファイルに、下記の内容を記載する。
 【例】1GBまでアップロード可にする場合
 ```
@@ -107,6 +112,13 @@ post_max_size = 1000M
 2. 下記コマンドを実行
 ```sh
 docker-compose restart
+```
+
+## phpMyAdminのアップロードファイルのサイズ上限を変更
+```
+environment:
+  MEMORY_LIMIT: 128M
+  UPLOAD_LIMIT: 64M
 ```
 
 ## このDocker Compose関連のデータを全て削除
